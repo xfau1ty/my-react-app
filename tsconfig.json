@@ -1,0 +1,17 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
+
+// {
+//   "compilerOptions": {
+//     // ...
+//     "jsx": "react-jsx",      // поддержка нового JSX-рантайма
+//     "allowJs": true,         // если остались .js-файлы с JSX
+//     "resolveJsonModule": true
+//   },
+//   "include": ["src"]
+// }
