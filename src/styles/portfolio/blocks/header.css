@@ -1,0 +1,124 @@
+.header {
+  background-color: #fff;
+  box-shadow: 0 2px 15px rgba(220, 53, 69, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  max-width: 1920px;
+  margin: 0 auto;
+  height: 70px;
+}
+
+.header__logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #dc3545;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.header__nav-link {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.header__nav-link:hover {
+  color: #dc3545;
+}
+
+.header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #dc3545;
+  transition: width 0.3s ease;
+}
+
+.header__nav-link:hover::after {
+  width: 100%;
+}
+
+.header__contact-btn {
+  background: linear-gradient(45deg, #dc3545, #e74c3c);
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.header__contact-btn:hover {
+  background: linear-gradient(45deg, #c82333, #dc3545);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+}
+
+@media (max-width: 1440px) {
+  .header__container {
+    padding: 20px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__container {
+    padding: 15px 20px;
+  }
+  
+  .header__nav {
+    gap: 20px;
+  }
+  
+  .header__logo {
+    font-size: 20px;
+  }
+  
+  .header__contact-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header__container {
+    padding: 15px 16px;
+  }
+  
+  .header__nav {
+    display: none;
+  }
+  
+  .header__contact-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
