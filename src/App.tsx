@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { Switch, Route } from 'wouter';
-import Header from './components/portfolio/Header';
-import Hero from './components/portfolio/Hero';
-import Services from './components/portfolio/Services';
-import CompanyLogos from './components/portfolio/CompanyLogos';
-import Portfolio from './components/portfolio/Portfolio';
-import Testimonials from './components/portfolio/Testimonials';
-import Footer from './components/portfolio/Footer';
-import Modal from './components/portfolio/Modal';
-import Preloader from './components/portfolio/Preloader';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import CompanyLogos from './components/CompanyLogos';
+import Portfolio from './components/Portfolio';
+import Testimonials from './components/Testimonials';
+import Footer from './components/Footer';
+import Modal from './components/Modal';
+import Preloader from './components/Preloader';
 import CardsPage from './pages/CardsPage';
 import NotFoundPage from './pages/NotFoundPage';
-import './styles/portfolio/style.css';
+import './styles/style.css';
 
 // Главная страница
 const HomePage: React.FC = () => {

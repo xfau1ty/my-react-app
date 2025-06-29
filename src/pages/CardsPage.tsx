@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'wouter';
-import Header from '../components/portfolio/Header';
-import Footer from '../components/portfolio/Footer';
-import Modal from '../components/portfolio/Modal';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Modal from '../components/Modal';
 import servicesData from '../data/services.json';
 
 interface Service {
