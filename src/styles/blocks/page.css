@@ -10,7 +10,6 @@
 .page__container {
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 .page__no-scroll {
@@ -21,22 +20,11 @@
 @media (max-width: 1440px) {
   .page__container {
     max-width: 1440px;
-    padding: 0 40px;
   }
 }
 
 @media (max-width: 768px) {
-  .page__container {
-    padding: 0 20px;
-  }
-  
-  .page {
+ .page {
     font-size: 14px;
-  }
-}
-
-@media (max-width: 360px) {
-  .page__container {
-    padding: 0 16px;
   }
 }
