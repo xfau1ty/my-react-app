@@ -1,54 +1,116 @@
-# React + TypeScript + Vite
+## Учебный проект
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Учебный проект веб-сайта, разработанный с использованием современного стека технологий. Включает главную страницу с секциями услуг, портфолио, отзывов клиентов и функциональной контактной формой.
 
-Currently, two official plugins are available:
+## Технологический стек
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend**: 
+  - React 18 (TypeScript)
+  - Tailwind CSS + CSS Modules
+  - Swiper.js (для слайдеров)
+  - Wouter (роутинг)
+- **Build**: 
+  - Vite
+- **Дополнительно**:
+  - React Query
+  - Кастомные хуки (useMobile, useToast)
 
-## Expanding the ESLint configuration
+## Структура проекта
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
++---public
+|   \---images
+|           img_hero.png
+|
+\---src
+    |   App.tsx
+    |   index.css
+    |   main.tsx
+    |
+    +---components
+    |       CompanyLogos.tsx
+    |       Footer.tsx
+    |       Header.tsx
+    |       Hero.tsx
+    |       Modal.tsx
+    |       Portfolio.tsx
+    |       Preloader.tsx
+    |       Services.tsx
+    |       Testimonials.tsx
+    |
+    +---data
+    |       services.json
+    |
+    +---hooks
+    |       use-mobile.tsx
+    |       use-toast.ts
+    |
+    +---lib
+    |       queryClient.ts
+    |       utils.ts
+    |
+    +---pages
+    |   |   CardsPage.tsx
+    |   |   not-found.tsx
+    |   |   NotFoundPage.tsx
+    |   |
+    |   \---sections
+    |           AboutCompanySection.tsx
+    |           ContactSection.tsx
+    |           HeroSection.tsx
+    |           PortfolioSection.tsx
+    |           ServicesSection.tsx
+    |           TestimonialsSection.tsx
+    |
+    \---styles
+        |   style.css
+        |
+        +---base
+        |       normalize.css
+        |
+        \---blocks
+                cards-page.css
+                company-logos.css
+                footer.css
+                header.css
+                hero.css
+                modal.css
+                not-found.css
+                page.css
+                portfolio.css
+                preloader.css
+                services.css
+                testimonials.css
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Запуск проекта
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Установка зависимостей**:
+   npm install
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+    Запуск в development режиме:
+   npm run dev
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Особенности реализации
+
+    Анимации и интерактивность:
+
+        Плавные переходы между секциями
+
+        Анимированный прелоадер
+
+        Интерактивные слайдеры (Portfolio, Testimonials)
+
+    Адаптивность:
+
+        Полностью адаптивный дизайн
+
+        Кастомный хук useMobile для условного рендеринга
+
+        Медиа-запросы через Tailwind
+
+    Функционал:
+
+        Модальное окно с валидацией формы
+
+        Динамическая загрузка услуг из JSON
+
+        Роутинг между страницами

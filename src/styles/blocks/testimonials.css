@@ -1,0 +1,132 @@
+.testimonials {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.testimonials__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.testimonials__title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.testimonials__subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: #7f8c8d;
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonials__slider {
+  position: relative;
+}
+
+.testimonials__slide {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  margin: 0 10px;
+}
+
+.testimonials__slide-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #dc3545, #e74c3c);
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.testimonials__slide-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testimonials__slide-author {
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.testimonials__slide-position {
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.testimonials .swiper-pagination-bullet {
+  background-color: #dc3545;
+  opacity: 0.3;
+}
+
+.testimonials .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.testimonials .swiper-button-next,
+.testimonials .swiper-button-prev {
+  color: #dc3545;
+}
+
+@media (max-width: 1440px) {
+  .testimonials {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials__container {
+    padding: 0 20px;
+  }
+  
+  .testimonials__title {
+    font-size: 28px;
+  }
+  
+  .testimonials__subtitle {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  
+  .testimonials__slide {
+    padding: 30px 20px;
+    margin: 0 5px;
+  }
+  
+  .testimonials__slide-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .testimonials__container {
+    padding: 0 16px;
+  }
+  
+  .testimonials__title {
+    font-size: 24px;
+  }
+  
+  .testimonials__slide {
+    padding: 25px 15px;
+  }
+}
