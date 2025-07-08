@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 ## Учебный проект
-=======
-Учебный проект
->>>>>>> 0bcb17e2a489a45b73bccf0bfb687f3f613afaff
 
 Учебный проект веб-сайта, разработанный с использованием современного стека технологий. Включает главную страницу с секциями услуг, портфолио, отзывов клиентов и функциональной контактной формой.
 
@@ -10,81 +6,89 @@
 
 - **Frontend**: 
   - React 18 (TypeScript)
-  - Tailwind CSS + CSS Modules
+  - SS Modules
   - Swiper.js (для слайдеров)
   - Wouter (роутинг)
+  - React Testing Library (для тестирования)
 - **Build**: 
-  - Vite
+  - Vite (для сборки проекта)
 - **Дополнительно**:
-  - React Query
-  - Кастомные хуки (useMobile, useToast)
+  - Кастомные хуки
 
 ## Структура проекта
-
-+---public
-|   \---images
-|           img_hero.png
-|
-\---src
-    |   App.tsx
-    |   index.css
-    |   main.tsx
-    |
-    +---components
-    |       CompanyLogos.tsx
-    |       Footer.tsx
-    |       Header.tsx
-    |       Hero.tsx
-    |       Modal.tsx
-    |       Portfolio.tsx
-    |       Preloader.tsx
-    |       Services.tsx
-    |       Testimonials.tsx
-    |
-    +---data
-    |       services.json
-    |
-    +---hooks
-    |       use-mobile.tsx
-    |       use-toast.ts
-    |
-    +---lib
-    |       queryClient.ts
-    |       utils.ts
-    |
-    +---pages
-    |   |   CardsPage.tsx
-    |   |   not-found.tsx
-    |   |   NotFoundPage.tsx
-    |   |
-    |   \---sections
-    |           AboutCompanySection.tsx
-    |           ContactSection.tsx
-    |           HeroSection.tsx
-    |           PortfolioSection.tsx
-    |           ServicesSection.tsx
-    |           TestimonialsSection.tsx
-    |
-    \---styles
-        |   style.css
-        |
-        +---base
-        |       normalize.css
-        |
-        \---blocks
-                cards-page.css
-                company-logos.css
-                footer.css
-                header.css
-                hero.css
-                modal.css
-                not-found.css
-                page.css
-                portfolio.css
-                preloader.css
-                services.css
-                testimonials.css
-
+```
+├───public
+│   └───images
+│           img_hero.png
+│
+└───src
+    │   App.tsx
+    │   index.css
+    │   main.tsx
+    │   setupTests.ts
+    │
+    ├───components
+    │   │   CompanyLogos.tsx
+    │   │   ContactSection.tsx
+    │   │   Footer.tsx
+    │   │   Header.test.tsx
+    │   │   Header.tsx
+    │   │   Hero.tsx
+    │   │   Layout.tsx
+    │   │   Modal.tsx
+    │   │   Portfolio.tsx
+    │   │   Preloader.tsx
+    │   │   Services.tsx
+    │   │   Testimonials.tsx
+    │   │
+    │   └───ui
+    │           Card.test.tsx
+    │           Card.tsx
+    │
+    ├───context
+    │       ModalContext.tsx
+    │
+    ├───data
+    │       services.json
+    │
+    ├───hooks
+    │       useFetch.ts
+    │       useFormInput.ts
+    │       useToggle.test.ts
+    │       useToggle.ts
+    │
+    ├───pages
+    │       CardsPage.tsx
+    │       NotFoundPage.tsx
+    │       ServiceDetailPage.tsx
+    │
+    ├───styles
+    │   │   style.css
+    │   │
+    │   ├───base
+    │   │       normalize.css
+    │   │
+    │   └───blocks
+    │           cards-page.module.css
+    │           company-logos.module.css
+    │           contact-section.module.css
+    │           footer.module.css
+    │           header.module.css
+    │           hero.module.css
+    │           modal.module.css
+    │           not-found.module.css
+    │           page.module.css
+    │           portfolio.module.css
+    │           preloader.module.css
+    │           services.module.css
+    │           testimonials.module.css
+    │
+    ├───types
+    │       index.ts
+    │
+    └───utils
+            icons.ts
+```
 ## Запуск проекта
 
 1. **Установка зависимостей**:
@@ -107,9 +111,7 @@
 
         Полностью адаптивный дизайн
 
-        Кастомный хук useMobile для условного рендеринга
-
-        Медиа-запросы через Tailwind
+        Кастомный хуки useToggle, useFormInput, useFetch
 
     Функционал:
 

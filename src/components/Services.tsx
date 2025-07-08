@@ -1,39 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'wouter';
 import servicesData from '../data/services.json';
-
-interface Service {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-}
+import { Service } from '../types';
+import { getServiceIcon } from '../utils/icons';
+import Card from './ui/Card';
 
 interface ServicesProps {
   limit?: number;
   showViewAllButton?: boolean;
 }
 
-const Services: React.FC<ServicesProps> = ({ limit = 3, showViewAllButton = true }) => {
-  const [services, setServices] = useState<Service[]>([]);
-
-  useEffect(() => {
-    // API запрос
-    // const fetchServices = async () => {
-    //   const response = await fetch('/api/services');
-    //   const data = await response.json();
-    //   setServices(data.slice(0, limit));
-    // };
-    
-    // локальные данные
-    setServices(servicesData.slice(0, limit));
-  }, [limit]);
-
-  const getServiceIcon = (id: number) => {
-    const icons = ['💻', '📱', '🎨', '⚡', '🔧', '📊', '🛡️', '🔌', '🔒', '⚙️', 
-                   '🎯', '📈', '🆘', '🚀', '⛓️', '🤖', '📡', '💳', '🔄', '💼'];
-    return icons[id - 1] || '⭐';
-  };
+const Services: React.FC<ServicesProps> = ({ 
+  limit = 3, 
+  showViewAllButton = true 
+}) => {
+  const services = servicesData.slice(0, limit) as Service[];
 
   return (
     <section className="services" id="services">
@@ -44,11 +25,13 @@ const Services: React.FC<ServicesProps> = ({ limit = 3, showViewAllButton = true
         </p>
         <div className="services__grid">
           {services.map((service) => (
-            <div key={service.id} className="services__card">
-              <div className="services__card-icon">{getServiceIcon(service.id)}</div>
-              <h3 className="services__card-title">{service.title}</h3>
-              <p className="services__card-description">{service.description}</p>
-            </div>
+            <Card
+              key={service.id}
+              icon={<div className="services__card-icon">{getServiceIcon(service.id)}</div>}
+              title={service.title}
+              description={service.description}
+              className="services__card"
+            />
           ))}
         </div>
         {showViewAllButton && (

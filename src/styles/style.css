@@ -1,19 +1,20 @@
 /* Базовые стили */
 @import url('./base/normalize.css');
-
+@import url("https://fonts.googleapis.com/css?family=Inter:400,700");
 /* Блоки */
-@import url('./blocks/page.css');
-@import url('./blocks/header.css');
-@import url('./blocks/hero.css');
-@import url('./blocks/services.css');
-@import url('./blocks/company-logos.css');
-@import url('./blocks/portfolio.css');
-@import url('./blocks/testimonials.css');
-@import url('./blocks/footer.css');
-@import url('./blocks/modal.css');
-@import url('./blocks/preloader.css');
-@import url('./blocks/cards-page.css');
-@import url('./blocks/not-found.css');
+@import url('../styles/blocks/page.module.css');
+@import url('./blocks/header.module.css');
+@import url('./blocks/hero.module.css');
+@import url('./blocks/services.module.css');
+@import url('./blocks/company-logos.module.css');
+@import url('./blocks/portfolio.module.css');
+@import url('./blocks/testimonials.module.css');
+@import url('./blocks/footer.module.css');
+@import url('./blocks/modal.module.css');
+@import url('./blocks/preloader.module.css');
+@import url('./blocks/cards-page.module.css');
+@import url('./blocks/contact-section.module.css');
+@import url('./blocks/not-found.module.css');
 
 /* Swiper стили */
 @import 'swiper/css';

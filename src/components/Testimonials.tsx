@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 const Testimonials: React.FC = () => {
   const testimonials = [
@@ -45,15 +45,15 @@ const Testimonials: React.FC = () => {
         </p>
         <div className="testimonials__slider">
           <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
+            modules={[Autoplay, Pagination]}
             spaceBetween={30}
             slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
+            loop={true} 
             autoplay={{
-              delay: 5000,
+              delay: 5000, 
               disableOnInteraction: false,
             }}
+            pagination={{ clickable: true }}
             breakpoints={{
               768: {
                 slidesPerView: 2,

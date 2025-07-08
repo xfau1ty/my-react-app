@@ -11,7 +11,6 @@
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .modal_opened {
@@ -22,17 +21,8 @@
 .modal__container {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   max-width: 500px;
   width: 90%;
-  max-height: 90vh;
-  overflow-y: auto;
-  transform: scale(0.9);
-  transition: transform 0.3s ease;
-}
-
-.modal_opened .modal__container {
-  transform: scale(1);
 }
 
 .modal__header {
@@ -54,18 +44,6 @@
   font-size: 24px;
   color: #95a5a6;
   cursor: pointer;
-  padding: 0;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-}
-
-.modal__close:hover {
-  background-color: #ecf0f1;
 }
 
 .modal__content {
@@ -94,7 +72,6 @@
   border: 2px solid #ecf0f1;
   border-radius: 6px;
   font-size: 16px;
-  transition: border-color 0.3s ease;
 }
 
 .modal__input:focus {
@@ -116,25 +93,16 @@
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .modal__button_primary {
-  background-color: #3498db;
+  background-color: #dc3545;
   color: white;
-}
-
-.modal__button_primary:hover {
-  background-color: #2980b9;
 }
 
 .modal__button_secondary {
   background-color: #ecf0f1;
   color: #2c3e50;
-}
-
-.modal__button_secondary:hover {
-  background-color: #d5dbdb;
 }
 
 @media (max-width: 768px) {

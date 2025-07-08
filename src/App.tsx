@@ -1,54 +1,43 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Switch, Route } from 'wouter';
-import Header from './components/Header';
+import { ModalProvider } from './context/ModalContext';
+import Layout from './components/Layout';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import CompanyLogos from './components/CompanyLogos';
 import Portfolio from './components/Portfolio';
 import Testimonials from './components/Testimonials';
-import Footer from './components/Footer';
-import Modal from './components/Modal';
-import Preloader from './components/Preloader';
 import CardsPage from './pages/CardsPage';
+import ServiceDetailPage from './pages/ServiceDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
+import ContactSection from './components/ContactSection';
 import './styles/style.css';
 
-// Главная страница
-const HomePage: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleContactClick = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleModalClose = () => {
-    setIsModalOpen(false);
-  };
-
-  return (
-    <div className="page">
-      <Preloader />
-      <Header onContactClick={handleContactClick} />
-      <main className="page__container">
-        <Hero />
-        <Services limit={3} showViewAllButton={true} />
-        <CompanyLogos />
-        <Portfolio />
-        <Testimonials />
-      </main>
-      <Footer />
-      <Modal isOpen={isModalOpen} onClose={handleModalClose} />
-    </div>
-  );
-};
+const HomePage: React.FC = () => (
+  <>
+    <Hero />
+    <Services showViewAllButton={true} />
+    <CompanyLogos />
+    <Portfolio />
+    <Testimonials />
+    <ContactSection />
+  </>
+);
 
 function App() {
   return (
-    <Switch>
-      <Route path="/" component={HomePage} />
-      <Route path="/cards" component={CardsPage} />
-      <Route component={NotFoundPage} />
-    </Switch>
+    <ModalProvider>
+      <Switch>
+        <Route path="/" component={() => <Layout><HomePage /></Layout>} />
+        <Route path="/cards" component={() => <Layout><CardsPage /></Layout>} />
+        
+        <Route path="/services/:id">
+          {(params) => <Layout><ServiceDetailPage serviceId={params.id} /></Layout>}
+        </Route>
+        
+        <Route path="/:rest*" component={NotFoundPage} />
+      </Switch>
+    </ModalProvider>
   );
 }
 

@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { Link, useLocation } from 'wouter';
+import { useModal } from '../context/ModalContext';
 
-interface HeaderProps {
-  onContactClick: () => void;
-}
-
-const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
+const Header: React.FC = () => {
   const [location] = useLocation();
+  const { openModal } = useModal();
   
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = useCallback((sectionId: string) => {
     if (location !== '/') {
       window.location.href = `/#${sectionId}`;
       return;
@@ -18,40 +16,32 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-  };
+  }, [location]);
+  
+  const navItems = useMemo(() => [
+    { id: 'home', label: 'Главная' },
+    { id: 'services', label: 'Услуги' },
+    { id: 'portfolio', label: 'Портфолио' },
+    { id: 'testimonials', label: 'Отзывы' }
+  ], []);
 
   return (
     <header className="header">
       <div className="header__container">
         <Link href="/" className="header__logo">TechNest</Link>
         <nav className="header__nav">
-          <button 
-            className="header__nav-link" 
-            onClick={() => scrollToSection('home')}
-          >
-            Главная
-          </button>
-          <button 
-            className="header__nav-link" 
-            onClick={() => scrollToSection('services')}
-          >
-            Услуги
-          </button>
-          <button 
-            className="header__nav-link" 
-            onClick={() => scrollToSection('portfolio')}
-          >
-            Портфолио
-          </button>
-          <button 
-            className="header__nav-link" 
-            onClick={() => scrollToSection('testimonials')}
-          >
-            Отзывы
-          </button>
+          {navItems.map((item) => (
+            <button 
+              key={item.id}
+              className="header__nav-link" 
+              onClick={() => scrollToSection(item.id)}
+            >
+              {item.label}
+            </button>
+          ))}
         </nav>
-        <button className="header__contact-btn" onClick={onContactClick}>
-          Contact Us
+        <button className="header__contact-btn" onClick={openModal}>
+          Заявка
         </button>
       </div>
     </header>

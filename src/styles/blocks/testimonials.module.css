@@ -43,7 +43,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: linear-gradient(45deg, #dc3545, #e74c3c);
+  background: #dc3545;
   margin: 0 auto 20px;
   display: flex;
   align-items: center;
@@ -51,7 +51,6 @@
   font-size: 32px;
   color: white;
   font-weight: bold;
-  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
 }
 
 .testimonials__slide-text {
@@ -71,20 +70,6 @@
 .testimonials__slide-position {
   color: #7f8c8d;
   font-size: 14px;
-}
-
-.testimonials .swiper-pagination-bullet {
-  background-color: #dc3545;
-  opacity: 0.3;
-}
-
-.testimonials .swiper-pagination-bullet-active {
-  opacity: 1;
-}
-
-.testimonials .swiper-button-next,
-.testimonials .swiper-button-prev {
-  color: #dc3545;
 }
 
 @media (max-width: 1440px) {

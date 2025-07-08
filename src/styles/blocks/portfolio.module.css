@@ -35,11 +35,6 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.portfolio__slide:hover {
-  transform: translateY(-5px);
 }
 
 .portfolio__slide-image {
@@ -73,25 +68,6 @@
   color: #dc3545;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.portfolio__slide-link:hover {
-  color: #c82333;
-}
-
-.portfolio .swiper-pagination-bullet {
-  background-color: #dc3545;
-  opacity: 0.3;
-}
-
-.portfolio .swiper-pagination-bullet-active {
-  opacity: 1;
-}
-
-.portfolio .swiper-button-next,
-.portfolio .swiper-button-prev {
-  color: #dc3545;
 }
 
 @media (max-width: 1440px) {

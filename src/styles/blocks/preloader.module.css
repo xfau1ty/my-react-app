@@ -9,12 +9,6 @@
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.preloader_hidden {
-  opacity: 0;
-  visibility: hidden;
 }
 
 .preloader__spinner {
@@ -29,11 +23,4 @@
 @keyframes preloader-spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
-
-.preloader__text {
-  color: white;
-  font-size: 18px;
-  margin-top: 20px;
-  font-weight: 500;
 }

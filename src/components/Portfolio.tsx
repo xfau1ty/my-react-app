@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 const Portfolio: React.FC = () => {
   const projects = [
@@ -45,10 +45,14 @@ const Portfolio: React.FC = () => {
         </p>
         <div className="portfolio__slider">
           <Swiper
-            modules={[Navigation, Pagination]}
+            modules={[Autoplay, Pagination]}
             spaceBetween={30}
             slidesPerView={1}
-            navigation
+            loop={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
             pagination={{ clickable: true }}
             breakpoints={{
               640: {

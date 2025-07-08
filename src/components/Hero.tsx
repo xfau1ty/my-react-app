@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImage from '/images/img_hero.png'; 
+import heroImage from '/images/img_hero.png';
 
 const Hero: React.FC = () => {
   return (
@@ -13,7 +13,12 @@ const Hero: React.FC = () => {
           <button className="hero__cta">Узнать больше</button>
         </div>
         <div className="hero__image">
-          <img src={heroImage} alt="TechNest - инновационные IT-решения" />
+          <img 
+            src={heroImage} 
+            alt="TechNest - инновационные IT-решения" 
+            loading="lazy"
+            className="hero__image-element"
+          />
         </div>
       </div>
     </section>

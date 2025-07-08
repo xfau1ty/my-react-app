@@ -1,26 +1,8 @@
 .hero {
   padding: 140px 0 100px;
-  background: linear-gradient(135deg, #dc3545 0%, #c82333 50%, #a71e2a 100%);
+  background: #dc3545;
   color: white;
   text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.1);
-  z-index: 1;
-}
-
-.hero__container {
-  position: relative;
-  z-index: 2;
 }
 
 .hero__container {
@@ -71,14 +53,6 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
-}
-
-.hero__cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.4);
-  background-color: #f8f9fa;
 }
 
 @media (max-width: 1440px) {

@@ -1,22 +1,18 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 const CompanyLogos: React.FC = () => {
-  const companies = [
+  const companies = useMemo(() => [
     'Microsoft', 'Google', 'Apple', 'Amazon', 'Meta', 'Netflix', 'Tesla', 'Adobe'
-  ];
+  ], []);
+
+  const duplicatedCompanies = useMemo(() => [...companies, ...companies], [companies]);
 
   return (
     <section className="company-logos">
       <div className="company-logos__container">
         <div className="company-logos__track">
-          {companies.map((company, index) => (
-            <div key={index} className="company-logos__item">
-              {company}
-            </div>
-          ))}
-          {/* бесконечный скролл */}
-          {companies.map((company, index) => (
-            <div key={`duplicate-${index}`} className="company-logos__item">
+          {duplicatedCompanies.map((company, index) => (
+            <div key={`${company}-${index}`} className="company-logos__item">
               {company}
             </div>
           ))}
