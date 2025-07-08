@@ -16,7 +16,7 @@
   - Кастомные хуки
 
 ## Структура проекта
-
+```
 +---public
 |   \---images
 |           img_hero.png
@@ -80,7 +80,7 @@
                 preloader.css
                 services.css
                 testimonials.css
-
+```
 ## Запуск проекта
 
 1. **Установка зависимостей**:
